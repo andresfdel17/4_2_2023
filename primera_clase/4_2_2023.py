@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb  4 13:58:32 2023
+
+@author: Andrés Felipe Delgado 
+@version Python 3.8.10
+"""
+import math;
+import json;
+# Area del cuadrado
+
+
+def E1():
+    # float_lado: float = lado del cuadrado
+    float_lado = float(
+        input("ingrese el  lado de un cuadrado para calcular el área: "))
+    float_area = float_lado ** 2
+    print("El área del cuadrado es:", float_area)
+# Area del triangulo
+
+
+def E2():
+    float_base = float(
+        input("ingrese la base del triangulo: "))
+    float_altura = float(
+        input("ingrese la altura del triangulo: "))
+    float_area = (float_base * float_altura) / 2
+    print("El área del triangulo es:", float_area)
+# Area del circulo
+
+
+def E3():
+    float_radio = float(input("Ingrese el radio del circulo: "))
+    print("El area del circulo es: ", (math.pi * float_radio ** 2))
+
+dict_ex = {
+    1: "Calculo area del cuadrado",
+    2: "Calculo area del triangulo",
+    3: "Area de un circulo"
+}
+dict_ejercicios = {
+    1: E1,
+    2: E2,
+    3: E3
+}
+print(json.dumps(dict_ex, indent=4))
+int_ejercicio = int(input("Elija el ejercicio a resolver: "))
+dict_ejercicios[int_ejercicio]()
