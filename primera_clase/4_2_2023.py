@@ -32,16 +32,24 @@ def E2():
 def E3():
     float_radio = float(input("Ingrese el radio del circulo: "))
     print("El area del circulo es: ", (math.pi * float_radio ** 2))
+    
+#Grados °f a °C
+def E4():
+    float_grados = float(input("Ingrese los grados farenheit: "))
+    float_c = ((float_grados * (5/9)) + 32);
+    print(f"{float_grados} f en C es igual a {float_c} C")
 
 dict_ex = {
     1: "Calculo area del cuadrado",
     2: "Calculo area del triangulo",
-    3: "Area de un circulo"
+    3: "Area de un circulo",
+    4: "Grados °f a °C"
 }
 dict_ejercicios = {
     1: E1,
     2: E2,
-    3: E3
+    3: E3,
+    4: E4
 }
 print(json.dumps(dict_ex, indent=4))
 int_ejercicio = int(input("Elija el ejercicio a resolver: "))
