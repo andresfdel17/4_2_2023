@@ -159,15 +159,15 @@ list_productos = [
     ['1000', '1', 'Iphone 09 Pro Max', 'Smartphone']
 ]
 
-print("*".ljust(TOTAL, "*"))
-print("|{}|{}|{}|{}|".format(list_Trama[0].center(15),list_Trama[1].center(20),list_Trama[2].center(10),list_Trama[3].center(10)))
-print("*".ljust(TOTAL, "*"))
+print("".ljust(TOTAL, "*"))
+print("|{:^15}|{:^20}|{:^10}|{:^10}|".format(list_Trama[0],list_Trama[1],list_Trama[2],list_Trama[3]))
+print("".ljust(TOTAL, "*"))
 float_total=0
 for el in list_productos:
-    print("|{}|{}|{}|{}|".format(el[PRODUCTO].center(15), el[DESCRIPCION].center(
-        20), el[CANTIDAD].center(10), el[PRECIO].center(10)))
+    print("|{:^15}|{:^20}|{:^10}|{:^10}|".format(el[PRODUCTO], el[DESCRIPCION], el[CANTIDAD], el[PRECIO]))
     float_total += float(el[PRECIO])
 list_total=["TOTAL", str(float_total)]
-print("*".ljust(TOTAL, "*"))
-print("|{}   |{}|".format(list_total[0].rjust(44), list_total[1].center(10)))
-print("*".ljust(TOTAL, "*"))
+print("".ljust(TOTAL, "*"))
+print("|{:>44}   |{:^10}|".format(list_total[0], list_total[1]))
+print("".ljust(TOTAL, "*"))
+
