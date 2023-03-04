@@ -140,34 +140,42 @@ Created on Sat Feb 18 14:26:27 2023
 # |                                                  TOTAL    |       5700    |
 # *****************************************************************************
 # %% Forma 1
-PRODUCTO = 3
-DESCRIPCION = 2
-CANTIDAD = 1
-PRECIO = 0
+PRODUCTO = 0
+DESCRIPCION = 1
+CANTIDAD = 2
+PRECIO = 3
 
 CENTER = 18
 TOTAL = 60
 
+FORMATString = "|{:^15}|{:^20}|{:^10}|{:^10}|"
+SEPARATOR = "*"
+
+def reverseArray(lista: list):
+    lista.reverse()
+    return lista
 # Declaracion de variables y colecciones
+
 
 list_Trama = ['Producto', 'Descripcion', 'Cantidad', 'Precio']
 
-list_productos = [
+list_productos = map(reverseArray,  [
     ['2000', '1', 'Iphone 12 Pro Max', 'Smartphone'],
     ['1500', '1', 'Iphone 11 Pro Max', 'Smartphone'],
     ['1200', '1', 'Iphone 10 Pro Max', 'Smartphone'],
     ['1000', '1', 'Iphone 09 Pro Max', 'Smartphone']
-]
+])
 
-print("".ljust(TOTAL, "*"))
-print("|{:^15}|{:^20}|{:^10}|{:^10}|".format(list_Trama[0],list_Trama[1],list_Trama[2],list_Trama[3]))
-print("".ljust(TOTAL, "*"))
-float_total=0
+print("".ljust(TOTAL, SEPARATOR))
+print(FORMATString.format(
+    list_Trama[PRODUCTO], list_Trama[DESCRIPCION], list_Trama[CANTIDAD], list_Trama[PRECIO]))
+print("".ljust(TOTAL, SEPARATOR))
+float_total = 0
 for el in list_productos:
-    print("|{:^15}|{:^20}|{:^10}|{:^10}|".format(el[PRODUCTO], el[DESCRIPCION], el[CANTIDAD], el[PRECIO]))
+    print(FORMATString.format(el[PRODUCTO],
+          el[DESCRIPCION], el[CANTIDAD], el[PRECIO]))
     float_total += float(el[PRECIO])
-list_total=["TOTAL", str(float_total)]
-print("".ljust(TOTAL, "*"))
-print("|{:>44}   |{:^10}|".format(list_total[0], list_total[1]))
-print("".ljust(TOTAL, "*"))
-
+list_total = ["TOTAL", str(float_total)]
+print("".ljust(TOTAL, SEPARATOR))
+print("|{:>44}{:<3}|{:^10}|".format(list_total[0],"", list_total[1]))
+print("".ljust(TOTAL, SEPARATOR))
