@@ -56,3 +56,26 @@ while True:
 
 
 # %% Ejercicio 3
+
+
+def calculate(s):
+    stack = []
+    opers = ['+', '-', '*', '/']
+    for c in s:
+        if c not in opers:
+            stack.append(int(c))
+        else:
+            top1 = stack.pop()
+            top2 = stack.pop()
+            if c == '+':
+                stack.append(top2 + top1)
+            elif c == '-':
+                stack.append(top2 - top1)
+            elif c == '*':
+                stack.append(top2 * top1)
+            elif c == '/':
+                stack.append(int(top2 / top1))
+    return stack.pop()
+
+string: str = input("Ingrese la expresion:\n")
+print("EL resultado es: {}".format(calculate(string.split())))
