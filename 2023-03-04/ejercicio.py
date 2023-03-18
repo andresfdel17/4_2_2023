@@ -56,6 +56,7 @@ while True:
 
 
 # %% Ejercicio 3
+# 3 4 6 5 - + * 6 +
 
 
 def calculate(s):
