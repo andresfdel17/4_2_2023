@@ -75,3 +75,21 @@ if speed1 <= 0 and speed2 <= 0:
 print(LINES)
 print("TIEMPO: {:.2f} m/s".center(70).format(dist/(speed1 + speed2)))
 print(LINES)
+#%% Distancia entre 2 puntos
+import math;
+
+LINES = "".center(70, "-")
+
+print(LINES)
+print("DISTANCIA ENTRE 2 PUNTOS EN EL PLANO".center(70))
+print(LINES)
+
+coordAx: float = float(input(">>> Ingrese la coordenada Ax: "))
+coordAy: float = float(input(">>> Ingrese la coordenada Ay: "))
+print(LINES)
+coordBx: float = float(input(">>> Ingrese la coordenada Bx: "))
+coordBy: float = float(input(">>> Ingrese la coordenada By: "))
+print(LINES)
+distancia: float = math.sqrt(((coordAx - coordBx) ** 2) + ((coordAy - coordBy) ** 2))
+print("Distancia: {:.2f}".center(70).format(distancia))
+print(LINES)
