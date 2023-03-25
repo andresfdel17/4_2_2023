@@ -6,8 +6,9 @@ Created on Sat Mar 18 14:57:47 2023
 """
 
 # %% Velocidad de Radar
-# Incompleto
 
+import math
+import sys
 LINES = "".center(70, "-")
 
 print(LINES)
@@ -18,10 +19,9 @@ print(LINES)
 def sec2Hour(sec: int):
     return (sec / 3600)
 
-
-less_f: float = ((1 / (2.00000004 * (10 ^ 10))) - (1 / (2 * (10 ^ 10))))
-plus_f: float = ((1 / (2.00000004 * (10 ^ 10))) + (1 / (2 * (10 ^ 10))))
-speed: float = ((6.685 * (10 ^ 8)) * less_f) / plus_f
+less_f: float = (((2.00000004 * (10 ** (10 - 1)))) - ((2 * (1 / (10 ** 10)))))
+plus_f: float = (((2.00000004 * (10 ** (10 - 1)))) + ((2 * (1 / (10 ** 10)))))
+speed: float = (((6.685 * (10 ** 1)) * less_f) / plus_f)
 
 print(">>> La velocidad es: {} millas por hora.".format(str(speed)))
 print(LINES)
@@ -56,7 +56,6 @@ print("Velocidad: {:.2f} m/s".center(70).format(dist/time))
 print(LINES)
 
 # %% Tiempo de encuentro
-import sys;
 
 LINES = "".center(70, "-")
 
@@ -75,8 +74,7 @@ if speed1 <= 0 and speed2 <= 0:
 print(LINES)
 print("TIEMPO: {:.2f} m/s".center(70).format(dist/(speed1 + speed2)))
 print(LINES)
-#%% Distancia entre 2 puntos
-import math;
+# %% Distancia entre 2 puntos
 
 LINES = "".center(70, "-")
 
@@ -90,6 +88,7 @@ print(LINES)
 coordBx: float = float(input(">>> Ingrese la coordenada Bx: "))
 coordBy: float = float(input(">>> Ingrese la coordenada By: "))
 print(LINES)
-distancia: float = math.sqrt(((coordAx - coordBx) ** 2) + ((coordAy - coordBy) ** 2))
+distancia: float = math.sqrt(
+    ((coordAx - coordBx) ** 2) + ((coordAy - coordBy) ** 2))
 print("Distancia: {:.2f}".center(70).format(distancia))
 print(LINES)
